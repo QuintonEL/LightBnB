@@ -1,5 +1,3 @@
-const properties = require('./json/properties.json');
-const users = require('./json/users.json');
 const pool = require('./index')
 
 /// Users
@@ -91,7 +89,6 @@ const getAllProperties = function(options, limit = 10) {
 
   // 3
   if (options.city) {
-    console.log(options);
     queryParams.push(`%${options.city}%`);
     queryString += `WHERE city LIKE $${queryParams.length} `;
   }

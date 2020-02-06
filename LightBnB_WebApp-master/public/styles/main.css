@@ -1,21 +1,29 @@
+body {
+  background-image: url("https://img.wallpapersafari.com/desktop/1440/900/41/5/6JjZoK.jpg");
+  background-size: 100%;
+}
+
 .property-listings {
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif; }
 
 .property-listing {
   margin: 20px 0;
   width: 100%;
   max-width: 600px;
-  height: 200px;
-  border: 1px solid black;
+  height: 220px;
+  border: 8px solid skyblue;
+  border-radius: 15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  align-content: stretch; }
+  align-content: stretch;
+  background: skyblue }
   .property-listing__title {
     font-size: 1.0rem; }
   .property-listing__preview-image {
@@ -46,8 +54,12 @@
     width: 100%; }
 
 .page-header__user-links ul {
+  padding: 20px;
   list-style: none;
-  display: flex; }
+  display: flex; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background: skyblue; }
   .page-header__user-links ul li {
     padding: 0;
     margin: 0 10px;
@@ -57,3 +69,39 @@
   display: none; }
 
 /*# sourceMappingURL=main.css.map */
+
+button{
+  position: relative;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
