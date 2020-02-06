@@ -1,13 +1,6 @@
 const properties = require('./json/properties.json');
 const users = require('./json/users.json');
-const { Pool } = require('pg');
-
-const pool = new Pool({
-  user: 'vagrant',
-  password: '123',
-  host: 'localhost',
-  database: 'lightbnb'
-});
+const pool = require('./index')
 
 /// Users
 
@@ -98,6 +91,7 @@ const getAllProperties = function(options, limit = 10) {
 
   // 3
   if (options.city) {
+    console.log(options);
     queryParams.push(`%${options.city}%`);
     queryString += `WHERE city LIKE $${queryParams.length} `;
   }
@@ -139,7 +133,7 @@ const getAllProperties = function(options, limit = 10) {
   `;
 
   // 5
-  console.log(queryString, queryParams);
+  //console.log(queryString, queryParams);
 
   // 6
   return pool.query(queryString, queryParams)
